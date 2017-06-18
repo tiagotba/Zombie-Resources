@@ -121,10 +121,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcessoDados\ZombieResourcesDbContext.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mapeamentos\RecursosTypeConfiguration.cs" />
+    <Compile Include="Mapeamentos\SobreviventesTypeConfiguration.cs" />
+    <Compile Include="Mapeamentos\ZombieResourcesEntityAbstractConfiguration.cs" />
+    <Compile Include="Migrations\201706181523528_MigrationInicial.cs" />
+    <Compile Include="Migrations\201706181523528_MigrationInicial.Designer.cs">
+      <DependentUpon>201706181523528_MigrationInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Recursos.cs" />
     <Compile Include="Models\Sobrevivente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,6 +153,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706181523528_MigrationInicial.resx">
+      <DependentUpon>201706181523528_MigrationInicial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
