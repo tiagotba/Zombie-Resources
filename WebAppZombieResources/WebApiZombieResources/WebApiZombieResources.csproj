@@ -127,6 +127,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mapeamentos\InventarioTypeConfiguration.cs" />
     <Compile Include="Mapeamentos\RecursosTypeConfiguration.cs" />
     <Compile Include="Mapeamentos\SobreviventesTypeConfiguration.cs" />
     <Compile Include="Mapeamentos\ZombieResourcesEntityAbstractConfiguration.cs" />
@@ -134,7 +135,12 @@
     <Compile Include="Migrations\201706181523528_MigrationInicial.Designer.cs">
       <DependentUpon>201706181523528_MigrationInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706201401126_MigracaoMuitosxMuitos.cs" />
+    <Compile Include="Migrations\201706201401126_MigracaoMuitosxMuitos.Designer.cs">
+      <DependentUpon>201706201401126_MigracaoMuitosxMuitos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Inventario.cs" />
     <Compile Include="Models\Recursos.cs" />
     <Compile Include="Models\Sobrevivente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -157,6 +163,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706181523528_MigrationInicial.resx">
       <DependentUpon>201706181523528_MigrationInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706201401126_MigracaoMuitosxMuitos.resx">
+      <DependentUpon>201706201401126_MigracaoMuitosxMuitos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

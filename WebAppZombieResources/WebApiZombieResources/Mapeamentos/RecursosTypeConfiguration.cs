@@ -33,9 +33,7 @@ namespace WebApiZombieResources.Mapeamentos
 
         protected override void ConfigurarChaveEstrangeira()
         {
-            HasRequired(p => p.Sobrevivente)
-                 .WithMany(p => p.Recursos)
-                 .HasForeignKey(fk => fk.IdSobrevivente);
+           
         }
 
         protected override void ConfigurarChavePrimaria()

@@ -11,7 +11,7 @@ namespace WebApiZombieResources.Models
         public string Descricao { get; set; }
         public int Quantidade { get; set; }
         public string Observacao { get; set; }
-        public virtual Sobrevivente Sobrevivente { get; set; }
-        public int IdSobrevivente { get; set; }
+        public virtual List<Sobrevivente> Sobreviventes { get; set; }
+        // public int IdSobrevivente { get; set; }
     }
 }
