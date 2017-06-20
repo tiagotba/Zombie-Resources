@@ -24,6 +24,11 @@ namespace WebApiZombieResources.Mapeamentos
                    .IsRequired()
                   .HasColumnName("SOBR_IDADE");
 
+            Property(P => P.HashSeguranca)
+                 .IsRequired()
+                .HasColumnName("SOBR_HASH")
+                .HasMaxLength(100);
+
             Property(P => P.Genero)
                  .IsOptional()
                  .HasColumnName("SOBR_GENERO")

@@ -46,3 +46,4 @@ C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieReso
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.csproj.GenerateResource.Cache
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.csprojResolveAssemblyReference.cache
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.Migrations.MigracaoMuitosxMuitos.resources
+C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.Migrations.AddCampoValidacaoSobrevivente.resources
