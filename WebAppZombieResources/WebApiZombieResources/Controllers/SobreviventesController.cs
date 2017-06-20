@@ -12,58 +12,58 @@ using WebApiZombieResources.Models;
 
 namespace WebApiZombieResources.Controllers
 {
-    public class RecursosController : ApiController
+    public class SobreviventesController : ApiController
     {
         private readonly ZombieResourcesDbContext _db = new ZombieResourcesDbContext();
 
-        public RecursosController()
+        public SobreviventesController()
         {
 
         }
 
-        public RecursosController(ZombieResourcesDbContext db)
+        public SobreviventesController(ZombieResourcesDbContext db)
         {
             _db = db;
         }
 
-        // GET: api/Recursos
-        public IQueryable<Recursos> GetRecursos()
+        // GET: api/Sobreviventes
+        public IQueryable<Sobrevivente> GetSobreviventes()
         {
-            return _db.Recursos;
+            return _db.Sobreviventes;
         }
 
-        // GET: api/Recursos/5
-        [ResponseType(typeof(Recursos))]
+        // GET: api/Sobreviventes/5
+        [ResponseType(typeof(Sobrevivente))]
         public IHttpActionResult GetRecursos(int id)
         {
-            Recursos recursos = _db.Recursos.Find(id);
+            Sobrevivente sobreviventes = _db.Sobreviventes.Find(id);
 
-            if (recursos == null)
+            if (sobreviventes == null)
             {
                 return NotFound();
             }
 
-            return Ok(recursos);
+            return Ok(sobreviventes);
         }
 
-        // POST: api/Recursos
-        [ResponseType(typeof(Recursos))]
-        public IHttpActionResult PostRecursos(Recursos recursos)
+        // POST: api/Sobreviventes
+        [ResponseType(typeof(Sobrevivente))]
+        public IHttpActionResult PostRecursos(Sobrevivente sobreviventes)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _db.Recursos.Add(recursos);
+            _db.Sobreviventes.Add(sobreviventes);
             _db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = recursos.Id }, recursos);
+            return CreatedAtRoute("DefaultApi", new { id = sobreviventes.Id }, sobreviventes);
         }
 
-        // PUT: api/Recursos/5
+        // PUT: api/Sobreviventes/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutRecursos(int id, Recursos recursos)
+        public IHttpActionResult PutSobreviventes(int id, Recursos recursos)
         {
             if (!ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace WebApiZombieResources.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!RecursosExists(id))
+                if (!SobreviventeExists(id))
                 {
                     return NotFound();
                 }
@@ -96,25 +96,25 @@ namespace WebApiZombieResources.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        private bool RecursosExists(int id)
+        private bool SobreviventeExists(int id)
         {
-            return _db.Recursos.Count(e => e.Id == id) > 0;
+            return _db.Sobreviventes.Count(e => e.Id == id) > 0;
         }
 
-        // DELETE: api/Recursos/5
-        [ResponseType(typeof(Recursos))]
-        public IHttpActionResult DeleteRecursos(int id)
+        // DELETE: api/Sobreviventes/5
+        [ResponseType(typeof(Sobrevivente))]
+        public IHttpActionResult DeleteSobreviventes(int id)
         {
-            Recursos recursos = _db.Recursos.Find(id);
-            if (recursos == null)
+            Sobrevivente sobreviventes = _db.Sobreviventes.Find(id);
+            if (sobreviventes == null)
             {
                 return NotFound();
             }
 
-            _db.Recursos.Remove(recursos);
+            _db.Sobreviventes.Remove(sobreviventes);
             _db.SaveChanges();
 
-            return Ok(recursos);
+            return Ok(sobreviventes);
         }
 
         protected override void Dispose(bool disposing)

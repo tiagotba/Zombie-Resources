@@ -124,6 +124,7 @@
     <Compile Include="AcessoDados\ZombieResourcesDbContext.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\RecursosController.cs" />
+    <Compile Include="Controllers\SobreviventesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
