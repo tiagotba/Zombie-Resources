@@ -21,11 +21,14 @@ namespace WebAppZombieResources
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js", "~/Scripts/CabinSketch_700.font.js", "~/Scripts/EB_Garamond_400.font.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                       "~/Content/reset.css", "~/Content/layout.css", "~/Content/style.css"));
+
+            bundles.Add(new StyleBundle("~/Content/images").Include(
+                    "~/Content/images/logo.png"));
         }
     }
 }

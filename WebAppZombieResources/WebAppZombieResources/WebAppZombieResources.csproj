@@ -157,6 +157,32 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\bg.jpg" />
+    <Content Include="Content\images\bg_box1.png" />
+    <Content Include="Content\images\bg_form.png" />
+    <Content Include="Content\images\bg_pagination.png" />
+    <Content Include="Content\images\buttons.png" />
+    <Content Include="Content\images\icon1.jpg" />
+    <Content Include="Content\images\icon2.jpg" />
+    <Content Include="Content\images\icon3.jpg" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\magnify.png" />
+    <Content Include="Content\images\marker_1.gif" />
+    <Content Include="Content\images\marker_2.png" />
+    <Content Include="Content\images\marker_3.png" />
+    <Content Include="Content\images\marker_left.png" />
+    <Content Include="Content\images\marker_right.png" />
+    <Content Include="Content\images\newsletter_bg.png" />
+    <Content Include="Content\images\page1_img3.png" />
+    <Content Include="Content\images\page1_img4.png" />
+    <Content Include="Content\images\page2_img1.png" />
+    <Content Include="Content\images\page2_img2.png" />
+    <Content Include="Content\images\send_button.png" />
+    <Content Include="Content\images\tweets.png" />
+    <Content Include="Content\layout.css" />
+    <Content Include="Content\prettyPhoto.css" />
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -167,6 +193,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\CabinSketch_700.font.js" />
+    <Content Include="Scripts\EB_Garamond_400.font.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -188,10 +216,10 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
