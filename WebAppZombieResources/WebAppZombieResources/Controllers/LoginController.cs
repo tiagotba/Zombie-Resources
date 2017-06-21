@@ -6,12 +6,17 @@ using System.Web.Mvc;
 
 namespace WebAppZombieResources.Controllers
 {
-    public class HomeController : Controller
+    public class LoginController : Controller
     {
-        public ActionResult Index()
+        // GET: Login
+        public ActionResult Create()
         {
             return View();
         }
 
+        public ActionResult Entrar()
+        {
+            return View();
+        }
     }
 }
