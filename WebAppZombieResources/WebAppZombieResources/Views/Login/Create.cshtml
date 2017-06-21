@@ -1,40 +1,38 @@
-﻿
+﻿@model WebAppZombieResources.ViewModels.SobreviventeViewModel
 @{
     ViewBag.Title = "Create";
 }
 
 <h2>Sign up</h2>
-
-<div class="panel panel-default">
-    <div class="panel-heading">Preencha os dados e siga as intruçoes abaixo</div>
-    <div class="panel-body">
-        <div class="input-group input-group-sm">
-            <span class="input-group-addon" id="sizing-addon3">Hash de Acesso</span>
-            <input type="text" id="txthash" class="form-control" aria-describedby="sizing-addon3" disabled="disabled">
-        </div>
-        <br />
-        <div class="input-group input-group-sm">
-            <span class="input-group-addon" id="sizing-addon3">Nome</span>
-            <input type="text" id="txtnome" class="form-control" aria-describedby="sizing-addon3">
-        </div>
-        <br />
-        <div class="input-group input-group-sm">
-            <span class="input-group-addon" id="sizing-addon3">Idade</span>
-            <input type="text" id="txtnome" class="form-control" aria-describedby="sizing-addon3">
-        </div>
-        <br />
-        <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default">Salvar</button>
-        </div>
-        
-        @*<div class="input-group input-group-sm">
-            <span class="input-group-addon" id="sizing-addon2">Sexo</span>
-            <span class="input-group-addon">
-                <input type="radio" aria-label="..." class="input-group-addon"><span>Masculino</span></>
-                &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
-                <input type="radio" aria-label="..." class="input-group-addon"><span>Feminino</span></>
-            </span>
-        </div>*@
+@using (Html.BeginForm("SignUp", "Login"))
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-default">
+        <div class="panel-heading">Preencha os dados e siga as intruçoes abaixo</div>
+        <div class="panel-body">
+            @*<div class="input-group input-group-sm">
+                @*<span class="input-group-addon" id="sizing-addon3">Hash de Acesso</span>*@
+                @*<input type="text" id="txthash" class="form-control" aria-describedby="sizing-addon3" disabled="disabled">*@
+                @*@Html.TextBoxFor(model => model.HashSeguranca, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
     </div>
-    <div class="panel-footer"><p class="alert alert-danger">Decore o seu hash de segurança ele será sua chave para entrar na aplicação</p></div>
-</div>
+                *@
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon" id="sizing-addon3">Nome</span>
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control validate[required]" } })
+            </div>
+            <br />
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon" id="sizing-addon3">Idade</span>
+                @Html.EditorFor(model => model.Idade, new { htmlAttributes = new { @class = "form-control validate[required]" } })
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="btn-group" aria-label="...">
+                    <button type="submit" class="btn btn-default">Salvar</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-footer"><p class="alert alert-danger">Decore o seu hash de segurança ele será sua chave para entrar na aplicação</p></div>
+    </div>
+}

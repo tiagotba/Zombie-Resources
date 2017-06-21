@@ -47,3 +47,6 @@ C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieReso
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.csproj.GenerateResource.Cache
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.pdb
+C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Web.Cors.dll
+C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Web.Http.Cors.dll
+C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Web.Http.Cors.xml

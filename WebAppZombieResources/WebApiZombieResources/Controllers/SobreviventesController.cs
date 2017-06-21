@@ -15,17 +15,18 @@ namespace WebApiZombieResources.Controllers
 {
     public class SobreviventesController : ApiController
     {
-        private readonly ZombieResourcesDbContext _db = new ZombieResourcesDbContext();
+        private readonly ZombieResourcesDbContext _db;
 
         public SobreviventesController()
         {
-
+            if (_db == null)
+            {
+                _db = new ZombieResourcesDbContext();
+            }
+           
         }
 
-        public SobreviventesController(ZombieResourcesDbContext db)
-        {
-            _db = db;
-        }
+       
 
         // GET: api/Sobreviventes
         public IQueryable<Sobrevivente> GetSobreviventes()
@@ -35,7 +36,7 @@ namespace WebApiZombieResources.Controllers
 
         // GET: api/Sobreviventes/5
         [ResponseType(typeof(Sobrevivente))]
-        public IHttpActionResult GetRecursos(int id)
+        public IHttpActionResult GetSobreviventes(int id)
         {
             Sobrevivente sobreviventes = _db.Sobreviventes.Find(id);
 
@@ -47,9 +48,25 @@ namespace WebApiZombieResources.Controllers
             return Ok(sobreviventes);
         }
 
+        // GET: api/Sobreviventes/Hash
+        //[ResponseType(typeof(string))]
+        //public IHttpActionResult GetHash()
+        //{
+        //    Random randHash = new Random();
+        //    string Hash = randHash.Next().ToString();
+
+        //    if (Hash == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok(Hash);
+        //}
+
         // POST: api/Sobreviventes
+        [HttpPost]
         [ResponseType(typeof(Sobrevivente))]
-        public IHttpActionResult PostRecursos(Sobrevivente sobreviventes)
+        public IHttpActionResult PostSobreviventes(Sobrevivente sobreviventes)
         {
             if (!ModelState.IsValid)
             {

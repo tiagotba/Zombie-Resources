@@ -13,8 +13,9 @@
 <h2><span>Identifique-se</span></h2>
 <div class="pad_left1 pad_bot1">
     <ol class="breadcrumb">
-        <li><button type="button" class="btn btn-default">@Html.ActionLink("Registro", "Create", "Login")</button> </li>
-        <li><button type="button" class="btn btn-default">@Html.ActionLink("Login", "Entrar", "Login")</button></li>
+        <li><a href="@Url.Action("Create", "Login")" class="btn btn-default">Registro</a></li>
+        <li><a href="@Url.Action("Entrar", "Login")" class="btn btn-default">Login</a></li>
+     
     </ol>
 </div>
 
