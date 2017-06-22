@@ -13,5 +13,25 @@ namespace WebAppZombieResources.Controllers
         {
             return View();
         }
+
+        public ActionResult Edit()
+        {
+            return View();
+        }
+
+        public ActionResult Delete()
+        {
+            return View();
+        }
+
+        public ActionResult Retirar()
+        {
+            return View();
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }

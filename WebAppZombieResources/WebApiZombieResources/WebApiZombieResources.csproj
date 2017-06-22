@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcessoDados\ZombieResourcesDbContext.cs" />
+    <Compile Include="App_Start\PreflightRequestsHandler.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\RecursosController.cs" />
     <Compile Include="Controllers\SobreviventesController.cs" />

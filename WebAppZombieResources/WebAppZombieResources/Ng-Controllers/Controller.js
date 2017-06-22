@@ -9,4 +9,19 @@
             $log.error('Oops! Something went wrong while fetching the data.')
         })
     }
+
+    $scope.saveSubs = function () {
+        var rec = {
+            Desc: $scope.desc,
+            Qtd: $scope.qtd,
+            Obs: $scope.obs
+        };
+       
+        var saveSubs = APIService.saveRecurso(rec);
+        saveSubs.then(function (d) {
+            getAll();
+        }, function (error) {
+            console.log('Oops! Something went wrong while saving the data.')
+        })
+    };
 })

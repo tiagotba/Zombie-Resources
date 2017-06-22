@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -25,6 +26,12 @@ namespace WebApiZombieResources
 
             var formatters = GlobalConfiguration.Configuration.Formatters;
             formatters.Remove(formatters.XmlFormatter);
+
+            //var formatter = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+            //formatter.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
+
+            //config.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Include;
+            //config.MessageHandlers.Add(new PreflightRequestsHandler());
 
         }
     }

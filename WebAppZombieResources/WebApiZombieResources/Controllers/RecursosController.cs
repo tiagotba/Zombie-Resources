@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using WebApiZombieResources.AcessoDados;
 using WebApiZombieResources.Models;
@@ -47,18 +49,23 @@ namespace WebApiZombieResources.Controllers
         }
 
         // POST: api/Recursos
-        [ResponseType(typeof(Recursos))]
-        public IHttpActionResult PostRecursos(Recursos recursos)
+        //[ResponseType(typeof(string))]
+        //[EnableCors(origins: "*", headers: "*", methods: "*")]
+        [HttpPost]
+        //[Route("api/Recursos")]
+        public HttpResponseMessage PostRecursos(String rec)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                 return Request.CreateErrorResponse(HttpStatusCode.NotImplemented, " Recurso não encontado");
             }
 
+            Recursos recursos = JsonConvert.DeserializeObject<Recursos>(rec);
             _db.Recursos.Add(recursos);
             _db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = recursos.Id }, recursos);
+           return Request.CreateResponse<Recursos>(HttpStatusCode.OK, recursos);
+
         }
 
         // PUT: api/Recursos/5

@@ -21,11 +21,17 @@
                     <td>{{recurso.Descricao}}</td>
                     <td>{{recurso.Quantidade}}</td>
                     <td>{{recurso.Observacao}}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><a href="@Url.Action("Edit", "Recursos")" class="btn-group btn-group-sm">Editar</a></td>
+                    <td><a href="@Url.Action("Delete", "Recursos")" class="btn-group btn-group-sm">Excluir</a></td>
+                    <td><a href="@Url.Action("Retirar", "Recursos")" class="btn-group btn-group-sm">Retirar</a></td>
                 </tr>
             </table>
         </div>
+        <div class="pad_left1 pad_bot1">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("Create", "Recursos")" class="btn btn-default">Novo</a></li>
+            </ol>
+        </div>
     </div>
+
 </div>

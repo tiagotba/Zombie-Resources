@@ -247,6 +247,10 @@
     <Content Include="Views\Login\Entrar.cshtml" />
     <Content Include="Views\Login\Create - Copy.cshtml" />
     <Content Include="Views\Recursos\Index.cshtml" />
+    <Content Include="Views\Recursos\Edit.cshtml" />
+    <Content Include="Views\Recursos\Delete.cshtml" />
+    <Content Include="Views\Recursos\Retirar.cshtml" />
+    <Content Include="Views\Recursos\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
