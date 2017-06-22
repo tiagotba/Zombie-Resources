@@ -23,13 +23,24 @@ namespace WebAppZombieResources
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                   "~/Scripts/angular.min.js", "~/Scripts/angular-route.min"));
+
+            bundles.Add(new ScriptBundle("~/bundles/modulos").Include(
+                 "~/Ng-Controllers/Module.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/services").Include(
+                "~/Ng-Controllers/Service.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/controllers").Include(
+               "~/Ng-Controllers/Controller.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                        "~/Content/reset.css", "~/Content/layout.css", "~/Content/style.css"));
 
-            bundles.Add(new StyleBundle("~/Content/images").Include(
-                    "~/Content/images/logo.png"));
+            //bundles.Add(new StyleBundle("~/Content/images").Include(
+            //        "~/Content/images/logo.png"));
         }
     }
 }

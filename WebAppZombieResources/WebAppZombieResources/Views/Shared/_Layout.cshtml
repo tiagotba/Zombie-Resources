@@ -1,19 +1,23 @@
 ﻿<!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" >
 <head>
     <title>@ViewBag.Title</title>
     <meta charset="utf-8">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/modulos")
+    @Scripts.Render("~/bundles/services")
+    @Scripts.Render("~/bundles/controllers")
 </head>
-<body id="page1">
+<body id="page1" data-ng-app="APIModule">
     <div class="main">
         <!-- header -->
         <header>
             <div class="wrapper">
 
             </div>
-            <h1 id="logo">@Styles.Render("~/Content/images")Survivor.com</h1>
+            <h1>Survivor.com</h1>
         </header>
         <!-- / header -->
         <!-- content -->

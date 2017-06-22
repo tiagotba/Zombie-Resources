@@ -26,6 +26,8 @@ C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieReso
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\Newtonsoft.Json.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Net.Http.Formatting.dll
+C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Web.Cors.dll
+C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Web.Http.Cors.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Web.Http.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Web.Http.WebHost.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\EntityFramework.xml
@@ -36,6 +38,7 @@ C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieReso
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\Microsoft.ApplicationInsights.xml
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Web.Http.Cors.xml
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\Newtonsoft.Json.xml
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Net.Http.Formatting.xml
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Web.Http.xml
@@ -47,6 +50,3 @@ C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieReso
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.csproj.GenerateResource.Cache
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.pdb
-C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Web.Cors.dll
-C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Web.Http.Cors.dll
-C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\bin\System.Web.Http.Cors.xml
