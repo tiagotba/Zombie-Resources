@@ -7,7 +7,7 @@
     {
                 return $http(
             {
-                method: 'post',
+                method: 'Post',
                 data: rec,
                 url: "http://localhost:52675/api/Recursos/"
             });

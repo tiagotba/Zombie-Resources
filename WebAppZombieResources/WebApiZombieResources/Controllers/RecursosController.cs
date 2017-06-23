@@ -14,6 +14,7 @@ using WebApiZombieResources.Models;
 
 namespace WebApiZombieResources.Controllers
 {
+  
     public class RecursosController : ApiController
     {
         private readonly ZombieResourcesDbContext _db = new ZombieResourcesDbContext();
@@ -50,22 +51,20 @@ namespace WebApiZombieResources.Controllers
 
         // POST: api/Recursos
         //[ResponseType(typeof(string))]
-        //[EnableCors(origins: "*", headers: "*", methods: "*")]
+        
         [HttpPost]
-        //[Route("api/Recursos")]
-        public HttpResponseMessage PostRecursos(String rec)
+        public  HttpResponseMessage PostRecursos([FromBody] object rec)
         {
             if (!ModelState.IsValid)
             {
                  return Request.CreateErrorResponse(HttpStatusCode.NotImplemented, " Recurso não encontado");
             }
 
-            Recursos recursos = JsonConvert.DeserializeObject<Recursos>(rec);
+            Recursos recursos = JsonConvert.DeserializeObject<Recursos>(Convert.ToString(rec));
             _db.Recursos.Add(recursos);
             _db.SaveChanges();
 
-           return Request.CreateResponse<Recursos>(HttpStatusCode.OK, recursos);
-
+            return Request.CreateResponse<Recursos>(HttpStatusCode.OK, recursos);
         }
 
         // PUT: api/Recursos/5

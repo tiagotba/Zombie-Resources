@@ -12,11 +12,10 @@
 
     $scope.saveSubs = function () {
         var rec = {
-            Desc: $scope.desc,
-            Qtd: $scope.qtd,
-            Obs: $scope.obs
+            Descricao: $scope.desc,
+            Quantidade: $scope.qtd,
+            Observacao: $scope.obs
         };
-       
         var saveSubs = APIService.saveRecurso(rec);
         saveSubs.then(function (d) {
             getAll();

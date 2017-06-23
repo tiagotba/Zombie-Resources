@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.Http.Routing;
 
 namespace WebApiZombieResources
 {
@@ -23,6 +25,21 @@ namespace WebApiZombieResources
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+
+        //    config.Routes.MapHttpRoute(
+        //       name: "Api_Get",
+        //       routeTemplate: "api/{controller}/{id}",
+        //       defaults: new { id = RouteParameter.Optional, action = "Get" },
+        //       constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) }
+        //   );
+
+        //    config.Routes.MapHttpRoute(
+        //   name: "Api_Post",
+        //   routeTemplate: "{controller}/{id}/{action}",
+        //   defaults: new { id = RouteParameter.Optional, action = "Post" },
+        //   constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
+        //);
 
             var formatters = GlobalConfiguration.Configuration.Formatters;
             formatters.Remove(formatters.XmlFormatter);

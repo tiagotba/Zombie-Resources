@@ -7,19 +7,25 @@
 
 <div class="panel panel-default" ng-controller="RecursosController">
     <div class="panel-body">
-        <div class="form-group">
-            <label for="descricao">Descricao</label>
-            <input type="text" class="form-control" id="desc" placeholder="Descricao" [required="string" ] data-ng-model="desc" />
-            <label for="descricao">Quantidade</label>
-            <input type="number" class="form-control" id="qtd" placeholder="Qtd" [required="number" ] data-ng-model="qtd" />
-            <label for="descricao">Observacao</label>
-            <textarea rows="4" cols="50" class="form-control" id="obs" [required="string" ] data-ng-model="obs"></textarea>
-        </div>
-        <div class="navbar">
-            <div class="navbar-left">
-                <button type="button" class="btn btn-default" data-ng-click="saveSubs();">Salvar</button>
+        <form name="form" >
+            <div class="form-group">
+                <label for="descricao">Descricao</label>
+                <input type="text" class="form-control" id="desc" name="desc" placeholder="Descricao"  data-ng-model="desc" required />
+                <span ng-class="alert alert-danger" ng-show="form.desc.$error.required">Descricao é obrigatória</span>
+                <br />
+                <label for="descricao">Quantidade</label>
+                <input type="number" class="form-control" id="qtd" name="qtd" placeholder="0"  data-ng-model="qtd" ng-minlength=1 required />
+                <span ng-class="alert alert-dange" ng-show="form.qtd.$error.required">Quantidade é obrigatória</span>
+                @*<span ng-class="alert alert-dange" ng-show="form.qtd.$error.minlength">Digite um valor maior que zero</span>*@
+                <br />
+                <label for="descricao">Observacao</label>
+                <textarea rows="4" cols="50" class="form-control" id="obs" data-ng-model="obs"></textarea>
             </div>
-        </div>
-
+            <div class="navbar">
+                <div class="navbar-left">
+                    <button type="button" class="btn btn-default" ng-disabled="!form.$valid"  data-ng-click="saveSubs();">Salvar</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
