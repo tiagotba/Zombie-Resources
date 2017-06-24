@@ -4,7 +4,30 @@
 }
 
 <h2>Editar</h2>
-
+<div class="panel panel-default" ng-controller="RecursosController" ng-init="editRecurso()">
+    <div class="panel-body">
+        <form name="form">
+            <div class="form-group">
+                <input type="text" class="form-control" id="Id" name="" ng-hide="true" data-ng-model="Id" />
+                <label for="descricao">Descricao</label>
+                <input type="text" class="form-control" id="desc" name="desc"  data-ng-model="Descricao" required />
+                <span ng-class="alert alert-danger" ng-show="form.desc.$error.required">Descricao é obrigatória</span>
+                <br />
+                <label for="descricao">Quantidade</label>
+                <input type="number" class="form-control" id="qtd" name="qtd"  data-ng-model="Quantidade"  required />
+                <span ng-class="alert alert-dange" ng-show="form.qtd.$error.required">Quantidade é obrigatória</span>
+                <br />
+                <label for="descricao">Observacao</label>
+                <textarea rows="4" cols="50" class="form-control" id="obs" data-ng-model="Observacao"></textarea>
+            </div>
+            <div class="navbar">
+                <div class="navbar-left">
+                    <button type="button" class="btn btn-default" ng-disabled="!form.$valid" data-ng-click="updRecurso();">Salvar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 <ol class="breadcrumb">
     <li><a href="@Url.Action("Index", "Recursos")" class="btn btn-default">Principal</a></li>
 </ol>

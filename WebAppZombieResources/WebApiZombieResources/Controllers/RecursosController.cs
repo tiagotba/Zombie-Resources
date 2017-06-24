@@ -36,8 +36,8 @@ namespace WebApiZombieResources.Controllers
         }
 
         // GET: api/Recursos/5
-        [ResponseType(typeof(Recursos))]
-        public IHttpActionResult GetRecursos(int id)
+      
+        public IHttpActionResult GetRecursos(int? id)
         {
             Recursos recursos = _db.Recursos.Find(id);
 
@@ -68,20 +68,30 @@ namespace WebApiZombieResources.Controllers
         }
 
         // PUT: api/Recursos/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutRecursos(int id, Recursos recursos)
+        [HttpPut]
+        public HttpResponseMessage PutRecursos(int id, [FromBody] object rec)
         {
+            Recursos newRecurso;
+
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return Request.CreateErrorResponse(HttpStatusCode.NotImplemented, " Recurso não implementado");
             }
 
-            if (id != recursos.Id)
+            Recursos recurso = _db.Recursos.SingleOrDefault( r=>r.Id == id);
+
+            if (recurso == null)
             {
-                return BadRequest();
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, " Dados não encontrados");
             }
 
-            _db.Entry(recursos).State = EntityState.Modified;
+            newRecurso = JsonConvert.DeserializeObject<Recursos>(Convert.ToString(rec));
+
+            recurso.Observacao = newRecurso.Observacao;
+            recurso.Quantidade = newRecurso.Quantidade;
+            recurso.Descricao = newRecurso.Descricao;
+
+            _db.Entry(recurso).State = EntityState.Modified;
 
             try
             {
@@ -89,17 +99,10 @@ namespace WebApiZombieResources.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!RecursosExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
                     throw;
-                }
             }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return Request.CreateResponse<Recursos>(HttpStatusCode.OK, recurso);
         }
 
         private bool RecursosExists(int id)

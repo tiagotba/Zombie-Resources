@@ -18,10 +18,11 @@
                     <th>Observação</th>
                 </tr>
                 <tr ng-repeat="recurso in listaRecursos">
+                    <td ng-hide="true">{{recurso.Id}}</td>
                     <td>{{recurso.Descricao}}</td>
                     <td>{{recurso.Quantidade}}</td>
                     <td>{{recurso.Observacao}}</td>
-                    <td><a href="@Url.Action("Edit", "Recursos")" class="btn-group btn-group-sm">Editar</a></td>
+                    <td><a class="btn-group btn-group-sm" ng-href="/Recursos/Edit/{{recurso.Id}}">Editar</a></td>
                     <td><a href="@Url.Action("Delete", "Recursos")" class="btn-group btn-group-sm">Excluir</a></td>
                     <td><a href="@Url.Action("Retirar", "Recursos")" class="btn-group btn-group-sm">Retirar</a></td>
                 </tr>

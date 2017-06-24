@@ -13,4 +13,18 @@
             });
 
     }
+
+    this.editRecurso = function (i) {
+        return $http.get("http://localhost:52675/api/Recursos/"+i)
+    }
+
+
+    this.updRecurso = function (rec,Id) {
+        return $http(
+        {
+            method: 'Put',
+            data: rec,
+            url: "http://localhost:52675/api/Recursos/"+Id
+        });
+    }
 });

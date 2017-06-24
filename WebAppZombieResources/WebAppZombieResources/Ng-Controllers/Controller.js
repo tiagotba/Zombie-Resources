@@ -23,4 +23,70 @@
             console.log('Oops! Something went wrong while saving the data.')
         })
     };
-})
+
+    //$scope.editPerson = function (pId)
+    //{
+    //    for (i in $scope.listaRecursos)
+    //    { //Getting the person details from scope based on id 
+    //        if ($scope.listaRecursos[i].Id === pId) { //Assigning the Create user scope variable for editing
+    //            $scope.newrecurso = { 
+    //                Id: $scope.listaRecursos[i].Id,
+    //                Descricao: $scope.listaRecursos[i].Descricao,
+    //                Quantidade: $scope.listaRecursos[i].Quantidade,
+    //                Observacao: $scope.listaRecursos[i].Observacao,
+    //                //Gender: JSON.stringify($scope.persons[i].Gender)
+    //            }; //Hiding Save button
+    //            $scope.DisplaySave = false; //Displaying Update button 
+    //            $scope.DisplayUpdate = true; //Clearing the Status 
+    //            $scope.status = '';
+    //        }
+           
+
+    $scope.editRecurso = function () {
+
+        var path = location.pathname;
+        var pos = location.pathname.lastIndexOf("/");
+        var id = path.substr(pos+1);
+      
+        var servCall = APIService.editRecurso(id);
+        servCall.then(function (d) {
+            $scope.Id= d.data.Id,
+            $scope.Descricao = d.data.Descricao,
+            $scope.Quantidade = d.data.Quantidade,
+            $scope.Observacao = d.data.Observacao
+        }, function (error) {
+            $log.error('Oops! Something went wrong while fetching the data.')
+        })
+    }
+
+
+            $scope.makeEditable = function (obj) {
+                obj.target.setAttribute("contenteditable", true);
+                obj.target.focus();
+            };
+
+            $scope.updRecurso = function () {
+                var Newrec = {
+                    Id : $scope.Id,
+                    Descricao: $scope.Descricao,
+                    Quantidade: $scope.Quantidade,
+                    Observacao: $scope.Observacao
+                };
+                var updSubs = APIService.updRecurso(Newrec, Newrec.Id);
+                updSubs.then(function (d) {
+                    getAll();
+                }, function (error) {
+                    console.log('Oops! Something went wrong while saving the data.')
+                })
+            };
+
+            //$scope.updRecurso = function (sub, eve) {
+            //    sub.MailID = eve.currentTarget.innerText;
+            //    var upd = APIService.updRecurso(sub);
+            //    upd.then(function (d) {
+            //        getAll();
+            //    }, function (error) {
+            //        console.log('Oops! Something went wrong while updating the data.')
+            //    })
+            //};
+        })
