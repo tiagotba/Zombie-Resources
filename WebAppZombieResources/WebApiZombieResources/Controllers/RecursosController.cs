@@ -112,6 +112,7 @@ namespace WebApiZombieResources.Controllers
 
         // DELETE: api/Recursos/5
         [ResponseType(typeof(Recursos))]
+        [HttpDelete]
         public IHttpActionResult DeleteRecursos(int id)
         {
             Recursos recursos = _db.Recursos.Find(id);

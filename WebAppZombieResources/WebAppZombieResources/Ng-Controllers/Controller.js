@@ -1,4 +1,4 @@
-﻿app.controller('RecursosController', function ($scope, APIService) {
+﻿app.controller('RecursosController', function ($scope, APIService, $window) {
     getAll();
 
     function getAll() {
@@ -10,6 +10,10 @@
         })
     }
 
+    $scope.getId = function (idEdited) {
+        $window.location.assign("../Recursos/Edit/" + idEdited);
+    }
+
     $scope.saveSubs = function () {
         var rec = {
             Descricao: $scope.desc,
@@ -19,8 +23,11 @@
         var saveSubs = APIService.saveRecurso(rec);
         saveSubs.then(function (d) {
             getAll();
+            $window.location.assign("../Recursos/");
+            alert('Registo alterado com sucesso!!');
         }, function (error) {
-            console.log('Oops! Something went wrong while saving the data.')
+            alert('um erro ocorreu!!');
+            //console.log('Oops! Something went wrong while saving the data.')
         })
     };
 
@@ -40,53 +47,78 @@
     //            $scope.DisplayUpdate = true; //Clearing the Status 
     //            $scope.status = '';
     //        }
-           
+
 
     $scope.editRecurso = function () {
 
         var path = location.pathname;
         var pos = location.pathname.lastIndexOf("/");
-        var id = path.substr(pos+1);
-      
+        var id = path.substr(pos + 1);
+
         var servCall = APIService.editRecurso(id);
         servCall.then(function (d) {
-            $scope.Id= d.data.Id,
+            $scope.Id = d.data.Id,
             $scope.Descricao = d.data.Descricao,
             $scope.Quantidade = d.data.Quantidade,
             $scope.Observacao = d.data.Observacao
+          
+
         }, function (error) {
-            $log.error('Oops! Something went wrong while fetching the data.')
+            alert('um erro ocorreu!!');
+            //$log.error('Oops! Something went wrong while fetching the data.')
         })
     }
 
+    $scope.deleteRecurso = function (idDeleted) {
 
-            $scope.makeEditable = function (obj) {
-                obj.target.setAttribute("contenteditable", true);
-                obj.target.focus();
-            };
+        deleteRec = $window.confirm('Deseja deletar esse registro?');
 
-            $scope.updRecurso = function () {
-                var Newrec = {
-                    Id : $scope.Id,
-                    Descricao: $scope.Descricao,
-                    Quantidade: $scope.Quantidade,
-                    Observacao: $scope.Observacao
-                };
-                var updSubs = APIService.updRecurso(Newrec, Newrec.Id);
-                updSubs.then(function (d) {
-                    getAll();
-                }, function (error) {
-                    console.log('Oops! Something went wrong while saving the data.')
-                })
-            };
+        if (deleteRec) {
 
-            //$scope.updRecurso = function (sub, eve) {
-            //    sub.MailID = eve.currentTarget.innerText;
-            //    var upd = APIService.updRecurso(sub);
-            //    upd.then(function (d) {
-            //        getAll();
-            //    }, function (error) {
-            //        console.log('Oops! Something went wrong while updating the data.')
-            //    })
-            //};
+            var deleteSubs = APIService.delRecurso(idDeleted);
+
+            deleteSubs.then(function (d) {
+                alert('Registo deletado com sucesso!!');
+                $window.location.reload(true);
+                getAll();
+            }, function (error) {
+                alert('um erro ocorreu!!');
+                //$log.error('Oops! Something went wrong while fetching the data.')
+            }
+
+            )
+        }
+
+    }
+
+
+    $scope.makeEditable = function (obj) {
+        obj.target.setAttribute("contenteditable", true);
+        obj.target.focus();
+    };
+
+    $scope.updRecurso = function () {
+        var Newrec = {
+            Id: $scope.Id,
+            Descricao: $scope.Descricao,
+            Quantidade: $scope.Quantidade,
+            Observacao: $scope.Observacao
+        };
+        var updSubs = APIService.updRecurso(Newrec, Newrec.Id);
+        updSubs.then(function (d) {
+            alert('Registo alterado com sucesso!!');
+            $window.location.reload(true);
+            getAll();
+        }, function (error) {
+            alert('um erro ocorreu!!');
+            //console.log('Oops! Something went wrong while saving the data.')
         })
+    };
+
+})
+
+
+
+
+
+

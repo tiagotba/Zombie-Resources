@@ -16,15 +16,21 @@
                     <th>Descrição</th>
                     <th>Qtd</th>
                     <th>Observação</th>
+                    <th>Ações</th>
                 </tr>
                 <tr ng-repeat="recurso in listaRecursos">
                     <td ng-hide="true">{{recurso.Id}}</td>
                     <td>{{recurso.Descricao}}</td>
                     <td>{{recurso.Quantidade}}</td>
                     <td>{{recurso.Observacao}}</td>
-                    <td><a class="btn-group btn-group-sm" ng-href="/Recursos/Edit/{{recurso.Id}}">Editar</a></td>
-                    <td><a href="@Url.Action("Delete", "Recursos")" class="btn-group btn-group-sm">Excluir</a></td>
-                    <td><a href="@Url.Action("Retirar", "Recursos")" class="btn-group btn-group-sm">Retirar</a></td>
+                    <td>
+                    @*<a class="btn-group btn-group-sm" ng-href="/Recursos/Edit/{{recurso.Id}}">Editar</a>*@
+                        <button class="btn-group btn-group-sm" ng-click="getId(recurso.Id)">Editar</button>
+                    </td>
+                    <td>
+                        <button class="btn-group btn-group-sm" ng-click="deleteRecurso(recurso.Id)">Excluir</button>
+                         @*<a href="@Url.Action("Delete", "Recursos")" class="btn-group btn-group-sm">Excluir</a>*@
+                    </td>
                 </tr>
             </table>
         </div>

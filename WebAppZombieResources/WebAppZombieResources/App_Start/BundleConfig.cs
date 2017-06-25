@@ -39,6 +39,7 @@ namespace WebAppZombieResources
                       "~/Content/bootstrap.css",
                        "~/Content/reset.css", "~/Content/layout.css", "~/Content/style.css"));
 
+
             //bundles.Add(new StyleBundle("~/Content/images").Include(
             //        "~/Content/images/logo.png"));
         }

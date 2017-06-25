@@ -27,4 +27,14 @@
             url: "http://localhost:52675/api/Recursos/"+Id
         });
     }
+
+    this.delRecurso = function (Id) {
+        var url = "http://localhost:52675/api/Recursos/" + Id;
+        return $http(
+        {
+            method: 'Delete',
+            data: Id,
+            url: url
+        });
+    }
 });
