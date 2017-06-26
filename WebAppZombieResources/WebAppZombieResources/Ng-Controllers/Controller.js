@@ -61,7 +61,9 @@
             $scope.Descricao = d.data.Descricao,
             $scope.Quantidade = d.data.Quantidade,
             $scope.Observacao = d.data.Observacao
-          
+
+            alert('Registo alterado com sucesso!!');
+            $window.location.assign("../Recursos/");
 
         }, function (error) {
             alert('um erro ocorreu!!');
@@ -118,7 +120,47 @@
 })
 
 
+app.controller('SobreviventeController', function ($scope, APIService, $window) {
+
+    $scope.Register = function () {
+
+        var sobr = {
+
+            Nome: $scope.nome,
+            Idade: $scope.idade
+        };
+        var savesobr = APIService.saveSobr(sobr);
+        savesobr.then(function (d) {
+            alert('Registo alterado com sucesso!!');
+            $scope.HashSeguranca = d.data.HashSeguranca;
+        }, function (error) {
+            alert('um erro ocorreu!!');
+
+        }
+        )
+    }
+
+    $scope.Login = function () {
+
+        var Hash = {
+
+            HashSeguranca:$scope.HashSeguranca
+        }
+
+        var LoginService = APIService.sbrLogin(Hash.HashSeguranca);
+        LoginService.then(function (d) {
+            if (d.data.Id !== null && d.data.Id>0) {
+                $window.location.assign("../Recursos/");
+            }
+            else {
+                alert('Hash de login invalido!')
+            }
+        })
+
+    }
+}
+
+)
 
 
-
-
+ 

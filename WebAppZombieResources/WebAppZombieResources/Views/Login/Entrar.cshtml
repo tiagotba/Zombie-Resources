@@ -4,16 +4,20 @@
 }
 
 <h2>Entrar</h2>
-<div class="panel panel-default">
+<div class="panel panel-default" ng-controller="SobreviventeController">
     <div class="panel-heading">Preencha o seu hash e clique em entrar</div>
     <div class="panel-body">
-        <div class="input-group input-group-sm">
-            <span class="input-group-addon" id="sizing-addon3">Hash de Acesso</span>
-            <input type="text" class="form-control" aria-describedby="sizing-addon3" >
-        </div>
-        <br />
-        <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default">Entrar</button>
-        </div>
+        <form name="form">
+            <div class="form-group">
+                <label for="hash">Hash de segurança</label>
+                <input type="text" class="form-control" id="HashSeguranca" name="HashSeguranca" placeholder="Insira seu hash obtido no momento do cadastro" data-ng-model="HashSeguranca" />
+                <br />
+            </div>
+            <div class="navbar">
+                <div class="navbar-left">
+                    <button type="button" class="btn btn-default" ng-disabled="!form.$valid" data-ng-click="Login();">Login</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

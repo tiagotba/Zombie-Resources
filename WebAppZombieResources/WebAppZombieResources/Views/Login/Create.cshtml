@@ -1,38 +1,40 @@
-﻿@model WebAppZombieResources.ViewModels.SobreviventeViewModel
+﻿@*@model WebAppZombieResources.ViewModels.SobreviventeViewModel*@
 @{
     ViewBag.Title = "Create";
 }
 
 <h2>Sign up</h2>
-@using (Html.BeginForm("SignUp", "Login"))
-{
-    @Html.AntiForgeryToken()
-    <div class="panel panel-default">
-        <div class="panel-heading">Preencha os dados e siga as intruçoes abaixo</div>
-        <div class="panel-body">
-            @*<div class="input-group input-group-sm">
-                @*<span class="input-group-addon" id="sizing-addon3">Hash de Acesso</span>*@
-                @*<input type="text" id="txthash" class="form-control" aria-describedby="sizing-addon3" disabled="disabled">*@
-                @*@Html.TextBoxFor(model => model.HashSeguranca, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
-    </div>
-                *@
-            <div class="input-group input-group-sm">
-                <span class="input-group-addon" id="sizing-addon3">Nome</span>
-                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control validate[required]" } })
-            </div>
-            <br />
-            <div class="input-group input-group-sm">
-                <span class="input-group-addon" id="sizing-addon3">Idade</span>
-                @Html.EditorFor(model => model.Idade, new { htmlAttributes = new { @class = "form-control validate[required]" } })
-            </div>
-            <br />
+
+<div class="panel panel-default" ng-controller="SobreviventeController">
+    <div class="panel-heading">Preencha os dados e siga as intruçoes abaixo</div>
+    <div class="panel-body">
+        <form name="form">
             <div class="form-group">
-                <div class="btn-group" aria-label="...">
-                    <button type="submit" class="btn btn-default">Salvar</button>
+                <label for="hash">Hash de segurança</label>
+                <input type="text" class="form-control" id="HashSeguranca" name="HashSeguranca" placeholder="" ng-disabled="true" data-ng-model="HashSeguranca" />
+                <br />
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" data-ng-model="nome" required />
+                <span ng-class="alert alert-danger" ng-show="form.nome.$error.required">Nome é obrigatório</span>
+                <br />
+                <label for="idade">Idade</label>
+                <input type="number" class="form-control" id="idade" name="idade" placeholder="0" data-ng-model="idade" ng-maxlength=2 required />
+                <span ng-class="alert alert-dange" ng-show="form.idade.$error.required">Idade é obrigatória</span>
+                <span ng-class="alert alert-dange" ng-show="form.idade.$error.maxlength">Valor não aceitavel</span>
+            </div>
+            <div class="navbar">
+                <div class="navbar-left">
+                    <button type="button" class="btn btn-default" ng-disabled="!form.$valid" data-ng-click="Register();">Registrar</button>
                 </div>
             </div>
-
-        </div>
-        <div class="panel-footer"><p class="alert alert-danger">Decore o seu hash de segurança ele será sua chave para entrar na aplicação</p></div>
+        </form>
     </div>
-}
+    <div class="panel-footer">
+        <div class="alert alert-danger">Decore o seu hash de segurança ao termino do cadastro ele será sua chave para entrar na aplicação</div>
+    </div>
+</div>
+<center>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Entrar", "Login")" class="btn btn-default">Login</a></li>
+    </ol>
+</center>

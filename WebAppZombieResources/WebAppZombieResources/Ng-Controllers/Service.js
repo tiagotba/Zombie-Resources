@@ -37,4 +37,19 @@
             url: url
         });
     }
+
+    this.saveSobr = function(sobr)
+    {
+        return $http(
+           {
+               method: 'Post',
+               data: sobr,
+               url: "http://localhost:52675/api/Sobreviventes/"
+           });
+    }
+
+    this.sbrLogin = function(hash)
+    {
+        return $http.get("http://localhost:52675/api/Sobreviventes/?id=0&hashId=" + hash)
+    }
 });

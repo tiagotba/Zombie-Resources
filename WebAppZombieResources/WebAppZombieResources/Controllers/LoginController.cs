@@ -22,17 +22,6 @@ namespace WebAppZombieResources.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult SignUp(SobreviventeViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                String novoUsuario = JsonConvert.SerializeObject(model);
-
-            }
-
-            return RedirectToAction("Index", "Recursos");
-        }
+       
     }
 }

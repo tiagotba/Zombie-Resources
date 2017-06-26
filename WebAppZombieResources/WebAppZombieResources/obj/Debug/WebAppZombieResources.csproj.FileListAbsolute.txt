@@ -50,3 +50,4 @@ C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieReso
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\Newtonsoft.Json.xml
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\obj\Debug\WebAppZombieResources.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\obj\Debug\WebAppZombieResources.pdb
+C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\obj\Debug\WebAppZombieResources.csprojResolveAssemblyReference.cache
