@@ -24,21 +24,21 @@
                     <td>{{recurso.Quantidade}}</td>
                     <td>{{recurso.Observacao}}</td>
                     <td>
-                    @*<a class="btn-group btn-group-sm" ng-href="/Recursos/Edit/{{recurso.Id}}">Editar</a>*@
+                        @*<a class="btn-group btn-group-sm" ng-href="/Recursos/Edit/{{recurso.Id}}">Editar</a>*@
                         <button class="btn-group btn-group-sm" ng-click="getId(recurso.Id)">Editar</button>
                     </td>
                     <td>
                         <button class="btn-group btn-group-sm" ng-click="deleteRecurso(recurso.Id)">Excluir</button>
-                         @*<a href="@Url.Action("Delete", "Recursos")" class="btn-group btn-group-sm">Excluir</a>*@
+                        @*<a href="@Url.Action("Delete", "Recursos")" class="btn-group btn-group-sm">Excluir</a>*@
                     </td>
                 </tr>
             </table>
         </div>
-        <div class="pad_left1 pad_bot1">
+        <center>
             <ol class="breadcrumb">
                 <li><a href="@Url.Action("Create", "Recursos")" class="btn btn-default">Novo</a></li>
             </ol>
-        </div>
+        </center>
     </div>
 
 </div>

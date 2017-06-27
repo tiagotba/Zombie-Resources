@@ -19,12 +19,15 @@
     }
 
 
-    this.updRecurso = function (rec,Id) {
+    this.updRecurso = function (rec, Id, idUser,qtdDebt) {
+        
+        //alert("http://localhost:52675/api/Recursos/?id=" + Id + "&idUser="+idUser+"&qtd="+qtdDebt);
         return $http(
         {
             method: 'Put',
             data: rec,
-            url: "http://localhost:52675/api/Recursos/"+Id
+            url: "http://localhost:52675/api/Recursos/?id=" + Id + "&idUser=" + idUser + "&qtd=" + qtdDebt
+
         });
     }
 

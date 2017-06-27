@@ -23,7 +23,11 @@ namespace WebApiZombieResources.Mapeamentos
             Property(P => P.SobreviventeId)
                    .IsRequired()
                   .HasColumnName("SOBR_ID");
-                  
+
+            Property(P => P.QtdRetirada)
+                  .IsRequired()
+                 .HasColumnName("INVENTARIO_QTD");
+
         }
 
         protected override void ConfigurarChaveEstrangeira()

@@ -47,6 +47,7 @@ C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieReso
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.Migrations.MigrationInicial.resources
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.Migrations.MigracaoMuitosxMuitos.resources
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.Migrations.AddCampoValidacaoSobrevivente.resources
+C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.Migrations.AdicaoColunaSaldos.resources
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.csproj.GenerateResource.Cache
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebApiZombieResources\obj\Debug\WebApiZombieResources.pdb

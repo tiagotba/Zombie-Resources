@@ -69,7 +69,7 @@ namespace WebApiZombieResources.Controllers
 
         // PUT: api/Recursos/5
         [HttpPut]
-        public HttpResponseMessage PutRecursos(int id, [FromBody] object rec)
+        public HttpResponseMessage PutRecursos(int id, [FromBody] object rec,int idUser,int qtd)
         {
             Recursos newRecurso;
 
@@ -79,17 +79,33 @@ namespace WebApiZombieResources.Controllers
             }
 
             Recursos recurso = _db.Recursos.SingleOrDefault( r=>r.Id == id);
-
-            if (recurso == null)
+            Sobrevivente sobrevivente = _db.Sobreviventes.SingleOrDefault(r => r.Id == idUser);
+           
+            if (recurso == null || sobrevivente == null)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, " Dados não encontrados");
             }
 
             newRecurso = JsonConvert.DeserializeObject<Recursos>(Convert.ToString(rec));
+           
+            if (recurso.Quantidade == newRecurso.Quantidade)
+            {
+                recurso.Observacao = newRecurso.Observacao;
+                recurso.Quantidade = newRecurso.Quantidade;
+                recurso.Descricao = newRecurso.Descricao;
+            }
+            else
+            {
+                recurso.Observacao = newRecurso.Observacao;
+                recurso.Quantidade = newRecurso.Quantidade;
+                recurso.Descricao = newRecurso.Descricao;
 
-            recurso.Observacao = newRecurso.Observacao;
-            recurso.Quantidade = newRecurso.Quantidade;
-            recurso.Descricao = newRecurso.Descricao;
+                Inventario inv = new Inventario();
+                inv.RecursoId = recurso.Id;
+                inv.SobreviventeId = sobrevivente.Id;
+                inv.QtdRetirada = qtd;
+                _db.Inventario.Add(inv);
+            }
 
             _db.Entry(recurso).State = EntityState.Modified;
 

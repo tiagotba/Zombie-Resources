@@ -25,6 +25,7 @@ C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieReso
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\Newtonsoft.Json.dll
+C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\System.Net.Http.Formatting.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\System.Web.Helpers.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\System.Web.Mvc.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\System.Web.Optimization.dll
@@ -39,6 +40,7 @@ C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieReso
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\Microsoft.ApplicationInsights.xml
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\System.Net.Http.Formatting.xml
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\System.Web.Helpers.xml
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\System.Web.Mvc.xml
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\System.Web.Optimization.xml
@@ -48,6 +50,6 @@ C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieReso
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\System.Web.WebPages.Razor.xml
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\Antlr3.Runtime.pdb
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\bin\Newtonsoft.Json.xml
+C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\obj\Debug\WebAppZombieResources.csprojResolveAssemblyReference.cache
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\obj\Debug\WebAppZombieResources.dll
 C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\obj\Debug\WebAppZombieResources.pdb
-C:\Users\suporte\Desktop\Zombie-Resources\WebAppZombieResources\WebAppZombieResources\obj\Debug\WebAppZombieResources.csprojResolveAssemblyReference.cache

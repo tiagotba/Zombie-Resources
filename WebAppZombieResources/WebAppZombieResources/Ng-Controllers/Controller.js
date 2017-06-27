@@ -14,6 +14,22 @@
         $window.location.assign("../Recursos/Edit/" + idEdited);
     }
 
+    $scope.controlaSaldos = function (qtdTotal) {
+
+        if (qtdTotal !== null && $scope.QtdDeb > 0) {
+
+            var result = qtdTotal - $scope.QtdDeb;
+            $scope.Quantidade = result;
+        }
+        else {
+
+            $scope.QtdDeb = 0;
+            $scope.Quantidade = $scope.qtdBd;
+        }
+
+    }
+
+
     $scope.saveSubs = function () {
         var rec = {
             Descricao: $scope.desc,
@@ -23,8 +39,9 @@
         var saveSubs = APIService.saveRecurso(rec);
         saveSubs.then(function (d) {
             getAll();
-            $window.location.assign("../Recursos/");
             alert('Registo alterado com sucesso!!');
+            $window.location.assign("../Recursos/");
+
         }, function (error) {
             alert('um erro ocorreu!!');
             //console.log('Oops! Something went wrong while saving the data.')
@@ -61,9 +78,9 @@
             $scope.Descricao = d.data.Descricao,
             $scope.Quantidade = d.data.Quantidade,
             $scope.Observacao = d.data.Observacao
+            $scope.QtdDeb = 0
+            $scope.qtdBd = d.data.Quantidade
 
-            alert('Registo alterado com sucesso!!');
-            $window.location.assign("../Recursos/");
 
         }, function (error) {
             alert('um erro ocorreu!!');
@@ -100,13 +117,21 @@
     };
 
     $scope.updRecurso = function () {
+
+        var IdUser = document.getElementById('IdUser');
         var Newrec = {
             Id: $scope.Id,
             Descricao: $scope.Descricao,
             Quantidade: $scope.Quantidade,
             Observacao: $scope.Observacao
         };
-        var updSubs = APIService.updRecurso(Newrec, Newrec.Id);
+        var qtdDebitada = {
+
+            Total: $scope.QtdDeb
+        };
+
+
+        var updSubs = APIService.updRecurso(Newrec, Newrec.Id,IdUser.value,qtdDebitada.Total);
         updSubs.then(function (d) {
             alert('Registo alterado com sucesso!!');
             $window.location.reload(true);
@@ -144,13 +169,14 @@ app.controller('SobreviventeController', function ($scope, APIService, $window) 
 
         var Hash = {
 
-            HashSeguranca:$scope.HashSeguranca
+            HashSeguranca: $scope.HashSeguranca
         }
 
         var LoginService = APIService.sbrLogin(Hash.HashSeguranca);
         LoginService.then(function (d) {
-            if (d.data.Id !== null && d.data.Id>0) {
-                $window.location.assign("../Recursos/");
+            if (d.data.Id !== null && d.data.Id > 0) {
+
+                $window.location.assign("../Recursos/?hasSeguranca=" + d.data.HashSeguranca);
             }
             else {
                 alert('Hash de login invalido!')
@@ -163,4 +189,4 @@ app.controller('SobreviventeController', function ($scope, APIService, $window) 
 )
 
 
- 
+

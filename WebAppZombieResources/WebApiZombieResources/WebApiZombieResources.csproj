@@ -153,6 +153,10 @@
     <Compile Include="Migrations\201706201541570_AddCampoValidacaoSobrevivente.Designer.cs">
       <DependentUpon>201706201541570_AddCampoValidacaoSobrevivente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706272009135_AdicaoColunaSaldos.cs" />
+    <Compile Include="Migrations\201706272009135_AdicaoColunaSaldos.Designer.cs">
+      <DependentUpon>201706272009135_AdicaoColunaSaldos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Inventario.cs" />
     <Compile Include="Models\Recursos.cs" />
@@ -183,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706201541570_AddCampoValidacaoSobrevivente.resx">
       <DependentUpon>201706201541570_AddCampoValidacaoSobrevivente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706272009135_AdicaoColunaSaldos.resx">
+      <DependentUpon>201706272009135_AdicaoColunaSaldos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,4 @@
-﻿
+﻿@model WebAppZombieResources.ViewModels.SobreviventeViewModel
 @{
     ViewBag.Title = "Editar Recurso";
 }
@@ -9,13 +9,18 @@
         <form name="form">
             <div class="form-group">
                 <input type="text" class="form-control" id="Id" name="" ng-hide="true" data-ng-model="Id" />
+                <input type="number" class="form-control" id="IdUser" name="IdUser" ng-hide="true" value="@Model.Id" />
                 <label for="descricao">Descricao</label>
                 <input type="text" class="form-control" id="desc" name="desc"  data-ng-model="Descricao" required />
                 <span ng-class="alert alert-danger" ng-show="form.desc.$error.required">Descricao é obrigatória</span>
                 <br />
-                <label for="descricao">Quantidade</label>
-                <input type="number" class="form-control" id="qtd" name="qtd"  data-ng-model="Quantidade"  required />
-                <span ng-class="alert alert-dange" ng-show="form.qtd.$error.required">Quantidade é obrigatória</span>
+                <label id="qtdBd" ng-hide="true" name="qtdBd" data-ng-model="Quantidade"></label>
+                <label for="quantTotal">Quantidade Total</label>
+                <input type="number" class="form-control" id="qtd" name="qtd"  data-ng-model="Quantidade" ng-disabled="true"  />
+                <br />
+                <label for="quantDebt">Quantidade Retirada</label>
+                <input type="number" class="form-control" id="qtddebit" ng-blur="controlaSaldos(Quantidade);" name="qtddebit" data-ng-model="QtdDeb" />
+                <span ng-class="alert alert-dange" ng-show="form.qtddebit == 0 || form.qtd < form.qtddebit ">Saldo insuficiente</span>
                 <br />
                 <label for="descricao">Observacao</label>
                 <textarea rows="4" cols="50" class="form-control" id="obs" data-ng-model="Observacao"></textarea>
