@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebAppZombieResources.ViewModels.InventarioIndexViewModel>
+@{
+    ViewBag.Title = "Inventario";
+}
+
+<h2>Inventario</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Listagem Inventario</div>
+    <div class="panel-body">
+        <table class="table">
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Qtd Retirada</th>
+                <th>Qtd Disponivel</th>
+            </tr>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nome</td>
+                        <td>@item.Descricao</td>
+                        <td>@item.QtdRetirada</td>
+                        <td>@item.Quantidade</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<center>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "Recursos")" class="btn btn-default">Principal</a></li>
+    </ol>
+</center>
