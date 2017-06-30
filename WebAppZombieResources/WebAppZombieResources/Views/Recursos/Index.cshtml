@@ -10,6 +10,13 @@
         <!-- Default panel contents -->
         <div class="panel-heading">Recursos</div>
         <div class="panel-body">
+            @if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                <ol class="breadcrumb">
+                    <li>Bem vindo @HttpContext.Current.User.Identity.Name</li>
+                    <li><a href="@Url.Action("Logoff", "Login")" class="btn btn-default">Sair</a></li>
+                </ol>
+            }
 
             <table class="table">
                 <tr>

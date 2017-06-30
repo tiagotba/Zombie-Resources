@@ -15,11 +15,10 @@ namespace WebAppZombieResources.Controllers
         private string UriText = "http://localhost:52675/api/Inventario";
         private List<InventarioIndexViewModel> viewModelList;
         // GET: Inventario
-        public async Task<ActionResult>Index()
+        public async Task<ActionResult> Index()
         {
-            if (TempData["User"] != null)
+            if (HttpContext.User.Identity.IsAuthenticated)
             {
-                TempData.Keep("User");
                 using (var client = new HttpClient())
                 {
                     using (var response = await client.GetAsync(UriText))

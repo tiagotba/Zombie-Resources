@@ -23,10 +23,10 @@ namespace WebApiZombieResources.Controllers
             {
                 _db = new ZombieResourcesDbContext();
             }
-           
+
         }
 
-       
+
 
         // GET: api/Sobreviventes
         public IQueryable<Sobrevivente> GetSobreviventes()
@@ -35,34 +35,52 @@ namespace WebApiZombieResources.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetSobreviventesLogin(int hashId)
+        [ResponseType(typeof(Sobrevivente))]
+        public IHttpActionResult GetSobreviventes(string hashId,string login)
+        {
+            Sobrevivente sobrevivente = null;
+
+            if (hashId!= null && !hashId.Equals(string.Empty) && !hashId.Equals("0"))
+            {
+                 sobrevivente = _db.Sobreviventes
+                .Where(s => s.HashSeguranca == hashId).FirstOrDefault<Sobrevivente>();
+            }
+            else
+            {
+                  sobrevivente = _db.Sobreviventes
+                .Where(s => s.Nome == login).FirstOrDefault<Sobrevivente>();
+            }
+            
+            if (sobrevivente == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(sobrevivente);
+
+        }
+
+        [ResponseType(typeof(Sobrevivente))]
+        public IHttpActionResult GetSobreviventes(string nome)
         {
             Sobrevivente sobrevivente = _db.Sobreviventes
-                .Where(s => s.HashSeguranca == hashId.ToString()).FirstOrDefault<Sobrevivente>();
+                .Where(s => s.HashSeguranca == nome).FirstOrDefault<Sobrevivente>();
 
             if (sobrevivente == null)
             {
                 return NotFound();
             }
 
-            return Ok(sobrevivente.Id);
+            return Ok(sobrevivente);
 
         }
         // GET: api/Sobreviventes/5
         [ResponseType(typeof(Sobrevivente))]
-        public IHttpActionResult GetSobreviventes(int id,string hashId)
+        public IHttpActionResult GetSobreviventes(int id)
         {
             Sobrevivente sobreviventes;
 
-            if (hashId!= null && !hashId.Equals(string.Empty))
-            {
-                sobreviventes = ObterDadosLogin(hashId);
-
-            }
-            else
-            {
-                sobreviventes = _db.Sobreviventes.Find(id);
-            }
+            sobreviventes = _db.Sobreviventes.Find(id);
 
             if (sobreviventes == null)
             {
@@ -95,7 +113,7 @@ namespace WebApiZombieResources.Controllers
             {
                 return Request.CreateErrorResponse(HttpStatusCode.NotImplemented, " Recurso não encontado");
             }
-            if (sobreviventes.HashSeguranca==null || sobreviventes.HashSeguranca.Equals(""))
+            if (sobreviventes.HashSeguranca == null || sobreviventes.HashSeguranca.Equals(""))
             {
                 Random randHash = new Random();
                 sobreviventes.HashSeguranca = randHash.Next().ToString();
@@ -194,7 +212,7 @@ namespace WebApiZombieResources.Controllers
             return Convert.ToBase64String(dst);
         }
 
-        private  Sobrevivente ObterDadosLogin(string hashId)
+        private Sobrevivente ObterDadosLogin(string hashId)
         {
             Sobrevivente sobrevivente = _db.Sobreviventes
               .Where(s => s.HashSeguranca == hashId.ToString()).FirstOrDefault<Sobrevivente>();
