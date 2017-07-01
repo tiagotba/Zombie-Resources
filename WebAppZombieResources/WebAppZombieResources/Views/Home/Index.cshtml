@@ -1,22 +1,21 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
 <h2>Sobre nós</h2>
 <div class="pad_left1 pad_bot1">
-
     <div class="pad">
         <p><strong>Survivor web</strong> Somos sobreviventes do surto zumbi e criamos esse aplicativo para garantir a nossa sobrevivência nesse mundo apocalíptico. Na nossa comunidade cada pessoa tem um papel fundamental.</p>
         <p>Você é um dos sobreviventes deste mundo caótico que vivemos e está querendo fazer parte da nossa comunidade. Faça seu registro nos botoes abaixo ou se loque se já estiver cadastrado</p>
     </div>
 </div>
 <h2><span>Identifique-se</span></h2>
-<div class="pad_left1 pad_bot1">
+<center>
     <ol class="breadcrumb">
-        <li><a href="@Url.Action("Create", "Login")" class="btn btn-default">Registro</a></li>
-        <li><a href="@Url.Action("Entrar", "Login")" class="btn btn-default">Login</a></li>
-     
-    </ol>
-</div>
+        <li><a href="@Url.Action("Create", "Login")" class="btn btn-primary"><span class="glyphicon glyphicon-user"
+      aria-hidden="true"></span>   Registro</a></li>
+        <li><a href="@Url.Action("Entrar", "Login")" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"
+      aria-hidden="true"></span>  Login</a></li>
 
-  
+    </ol>
+</center>
+

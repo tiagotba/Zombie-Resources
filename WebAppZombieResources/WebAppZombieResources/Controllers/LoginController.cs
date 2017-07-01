@@ -34,13 +34,14 @@ namespace WebAppZombieResources.Controllers
 
             using (var cliente = new HttpClient())
             {
-                UriText = UriText + "/?hashId=" + model.HashSeguranca;
+                UriText = UriText + "/?hashId=" + model.HashSeguranca+ "&login=p";
 
                 HttpResponseMessage response = await cliente.GetAsync(UriText);
                 if (response.IsSuccessStatusCode)
                 {
                     var userJson = await response.Content.ReadAsStringAsync();
-                    user = JsonConvert.DeserializeObject<List<SobreviventeViewModel>>(userJson).FirstOrDefault();
+                    //user = JsonConvert.DeserializeObject<List<SobreviventeViewModel>>(userJson).FirstOrDefault();
+                    user = JsonConvert.DeserializeObject<SobreviventeViewModel>(userJson);
                     FormsAuthentication.SetAuthCookie(user.Nome.ToString(), true);
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))

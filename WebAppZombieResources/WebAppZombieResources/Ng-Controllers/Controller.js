@@ -90,9 +90,9 @@
 
     $scope.deleteRecurso = function (idDeleted) {
 
-        deleteRec = $window.confirm('Deseja deletar esse registro?');
+        //deleteRec = $window.confirm('Deseja deletar esse registro?');
 
-        if (deleteRec) {
+        if (confirm('Deseja deletar esse registro?')) {
 
             var deleteSubs = APIService.delRecurso(idDeleted);
 
@@ -101,7 +101,8 @@
                 $window.location.reload(true);
                 getAll();
             }, function (error) {
-                alert('um erro ocorreu!!');
+                //alert('um erro ocorreu!!');
+                mensagemErroModalPopUp(idDeleted, "um erro ocorreu!!");
                 //$log.error('Oops! Something went wrong while fetching the data.')
             }
 
@@ -186,7 +187,11 @@ app.controller('SobreviventeController', function ($scope, APIService, $window) 
     }
 }
 
+
+
 )
+
+
 
 
 

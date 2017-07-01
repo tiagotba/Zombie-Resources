@@ -11,7 +11,12 @@
             {
             <ol class="breadcrumb">
                 <li>Bem vindo @HttpContext.Current.User.Identity.Name</li>
-                <li><a href="@Url.Action("Logoff", "Login")" class="btn btn-default">Sair</a></li>
+                <li>
+                    <a href="@Url.Action("Logoff", "Login")" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-share"
+                              aria-hidden="true"></span>Sair
+                    </a>
+                </li>
             </ol>
         }
         <form name="form" >
@@ -30,12 +35,19 @@
             </div>
             <div class="navbar">
                 <div class="navbar-left">
-                    <button type="button" class="btn btn-default" ng-disabled="!form.$valid"  data-ng-click="saveSubs();">Salvar</button>
+                    <button type="button" class="btn btn-success" ng-disabled="!form.$valid"  data-ng-click="saveSubs();">Salvar</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
-<ol class="breadcrumb">
-    <li><a href="@Url.Action("Index", "Recursos")" class="btn btn-default">Principal</a></li>
-</ol>
+<center>
+    <ol class="breadcrumb">
+        <li>
+            <a href="@Url.Action("Index", "Recursos")" class="btn btn-default">
+                <span class="glyphicon glyphicon-home"
+                      aria-hidden="true"></span>Principal
+            </a>
+        </li>
+    </ol>
+</center>
