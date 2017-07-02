@@ -39,16 +39,19 @@ namespace WebApiZombieResources.Controllers
         public IHttpActionResult GetSobreviventes(string hashId,string login)
         {
             Sobrevivente sobrevivente = null;
-
-            if (hashId!= null && !hashId.Equals(string.Empty) && !hashId.Equals("0"))
+            if (hashId== null && login == null || hashId.Equals(string.Empty) && login.Equals(string.Empty))
+            {
+                return NotFound();
+            }
+            if (hashId!= null && hashId.Equals(string.Empty) || hashId.Equals("0") && login != null)
             {
                  sobrevivente = _db.Sobreviventes
-                .Where(s => s.HashSeguranca == hashId).FirstOrDefault<Sobrevivente>();
+                .Where(s => s.LoginName == login).FirstOrDefault<Sobrevivente>();
             }
             else
             {
                   sobrevivente = _db.Sobreviventes
-                .Where(s => s.Nome == login).FirstOrDefault<Sobrevivente>();
+                .Where(s => s.LoginName == login && s.HashSeguranca == hashId).FirstOrDefault<Sobrevivente>();
             }
             
             if (sobrevivente == null)
@@ -112,6 +115,10 @@ namespace WebApiZombieResources.Controllers
             if (!ModelState.IsValid)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.NotImplemented, " Recurso não encontado");
+            }
+            if (sobreviventes.Genero== null)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, " Valores não aceitaveis");
             }
             if (sobreviventes.HashSeguranca == null || sobreviventes.HashSeguranca.Equals(""))
             {

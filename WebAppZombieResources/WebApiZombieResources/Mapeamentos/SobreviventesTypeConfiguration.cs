@@ -29,10 +29,19 @@ namespace WebApiZombieResources.Mapeamentos
                 .HasColumnName("SOBR_HASH")
                 .HasMaxLength(100);
 
+            Property(P => P.LoginName)
+                .IsRequired()
+               .HasColumnName("SOBR_LOGIN")
+               .HasMaxLength(100);
+
+            Property(P => P.EAdmin)
+                .IsRequired()
+               .HasColumnName("SOBR_ISADMIN");
+
             Property(P => P.Genero)
                  .IsOptional()
                  .HasColumnName("SOBR_GENERO")
-                 .HasMaxLength(2);
+                 .HasMaxLength(1);
         }
 
         protected override void ConfigurarChaveEstrangeira()

@@ -12,6 +12,8 @@ namespace WebApiZombieResources.Models
         public string Genero { get; set; }
         public int Idade { get; set; }
         public string HashSeguranca { get; set; }
+        public string LoginName { get; set; }
+        public bool EAdmin { get; set; }
         public virtual List<Recursos> Recursos { get; set; }
     }
 }

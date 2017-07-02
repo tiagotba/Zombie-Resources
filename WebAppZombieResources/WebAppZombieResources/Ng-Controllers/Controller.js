@@ -153,8 +153,11 @@ app.controller('SobreviventeController', function ($scope, APIService, $window) 
         var sobr = {
 
             Nome: $scope.nome,
-            Idade: $scope.idade
+            Idade: $scope.idade,
+            LoginName: $scope.login,
+            Genero: $scope.sexo.tipo 
         };
+        
         var savesobr = APIService.saveSobr(sobr);
         savesobr.then(function (d) {
             alert('Registo alterado com sucesso!!');

@@ -158,6 +158,14 @@
     <Compile Include="Migrations\201706272009135_AdicaoColunaSaldos.Designer.cs">
       <DependentUpon>201706272009135_AdicaoColunaSaldos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707012141476_adicaoCamposSeguranca.cs" />
+    <Compile Include="Migrations\201707012141476_adicaoCamposSeguranca.Designer.cs">
+      <DependentUpon>201707012141476_adicaoCamposSeguranca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707021257256_MudancaCamposPorContaDaSeguranca.cs" />
+    <Compile Include="Migrations\201707021257256_MudancaCamposPorContaDaSeguranca.Designer.cs">
+      <DependentUpon>201707021257256_MudancaCamposPorContaDaSeguranca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Inventario.cs" />
     <Compile Include="Models\Recursos.cs" />
@@ -191,6 +199,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706272009135_AdicaoColunaSaldos.resx">
       <DependentUpon>201706272009135_AdicaoColunaSaldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707012141476_adicaoCamposSeguranca.resx">
+      <DependentUpon>201707012141476_adicaoCamposSeguranca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707021257256_MudancaCamposPorContaDaSeguranca.resx">
+      <DependentUpon>201707021257256_MudancaCamposPorContaDaSeguranca.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

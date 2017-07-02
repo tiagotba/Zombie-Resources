@@ -34,7 +34,7 @@ namespace WebAppZombieResources.Controllers
 
             using (var cliente = new HttpClient())
             {
-                UriText = UriText + "/?hashId=" + model.HashSeguranca+ "&login=p";
+                UriText = UriText + "/?hashId=" + model.HashSeguranca+ "&login="+model.LoginName;
 
                 HttpResponseMessage response = await cliente.GetAsync(UriText);
                 if (response.IsSuccessStatusCode)
@@ -42,7 +42,7 @@ namespace WebAppZombieResources.Controllers
                     var userJson = await response.Content.ReadAsStringAsync();
                     //user = JsonConvert.DeserializeObject<List<SobreviventeViewModel>>(userJson).FirstOrDefault();
                     user = JsonConvert.DeserializeObject<SobreviventeViewModel>(userJson);
-                    FormsAuthentication.SetAuthCookie(user.Nome.ToString(), true);
+                    FormsAuthentication.SetAuthCookie(user.LoginName, true);
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
                     {

@@ -16,6 +16,15 @@
                             @Html.AntiForgeryToken()
                             <form id="form" role="form" style="display: block;">
                                 <div class="form-group">
+                                    <label for="hash" class="control-label col-md-6">Login</label>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <div class="form-control">
+                                        @Html.TextBoxFor(model => model.LoginName /*, new { htmlAttributes = new { @placeholder = "Hash de Seguranca", @class = "form-control" }*/ )
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="hash" class="control-label col-md-6">Hash de segurança</label>
                                 </div>
                                 <br />

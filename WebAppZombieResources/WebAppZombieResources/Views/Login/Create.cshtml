@@ -17,6 +17,18 @@
                 <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" data-ng-model="nome" required />
                 <span ng-class="alert alert-danger" ng-show="form.nome.$error.required">Nome é obrigatório</span>
                 <br />
+                <br />
+                <label for="sexo">Sexo</label> &nbsp;&nbsp;
+                <input type="radio" ng-model="sexo.tipo" value="M"> Masculino
+                <input type="radio" ng-model="sexo.tipo" value="F"> Feminino
+                <br />
+                <br />
+                <label for="login">Login</label>
+                <input type="text" class="form-control" id="login" name="login" placeholder="Max 8 caracteres incluindo um ponto " data-ng-model="login" ng-minlength="4" ng-maxlength=8 required />
+                <span ng-class="help-block" ng-show="form.login.$error.required">Login é obrigatório</span>
+                <span ng-class="help-blockr" ng-show="form.login.$error.minlength">Minimo 4 caracteres</span>
+                <span ng-class="help-block" ng-show="form.login.$error.maxlength">Limite de caracteres excedido</span>
+                <br />
                 <label for="idade">Idade</label>
                 <input type="number" class="form-control" id="idade" name="idade" placeholder="0" data-ng-model="idade" ng-maxlength=2 required />
                 <span ng-class="alert alert-dange" ng-show="form.idade.$error.required">Idade é obrigatória</span>
@@ -24,7 +36,10 @@
             </div>
             <div class="navbar">
                 <div class="navbar-left">
-                    <button type="button" class="btn btn-default" ng-disabled="!form.$valid" data-ng-click="Register();">Registrar</button>
+                    <button type="button" class="btn btn-success" ng-disabled="!form.$valid" data-ng-click="Register();">
+                        <span class="glyphicon glyphicon-log-in"
+                              aria-hidden="true"></span> Registrar
+                    </button>
                 </div>
             </div>
         </form>
@@ -35,8 +50,12 @@
 </div>
 <center>
     <ol class="breadcrumb">
-        <li><a href="@Url.Action("Entrar", "Login")" class="btn btn-default"><span class="glyphicon glyphicon-log-in"
-      aria-hidden="true"></span>  Login</a></li>
+        <li>
+            <a href="@Url.Action("Entrar", "Login")" class="btn btn-default">
+                <span class="glyphicon glyphicon-log-in"
+                      aria-hidden="true"></span>  Login
+            </a>
+        </li>
         <li>
             <a href="@Url.Action("Index", "Home")" class="btn btn-default">
                 <span class="glyphicon glyphicon-home"
